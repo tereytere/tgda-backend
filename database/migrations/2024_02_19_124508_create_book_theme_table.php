@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('authors', function (Blueprint $table) {
+        Schema::create('book_theme', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('name');
-            $table->string('image')->nullable();
-            $table->string('youtube')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('podcast')->nullable();
-            $table->string('webpage')->nullable();
-            $table->string('language');
+            $table->uuid('book_id');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+            $table->uuid('theme_id');
+            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('book_theme');
     }
 };

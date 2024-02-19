@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use App\Traits\UUID;
 
 
-class Post extends Model
+class Book extends Model
 {
     use HasFactory;
     use UUID;
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['title', 'body', 'type', 'url', 'themes', 'image', 'author', 'language'];
+    protected $fillable = ['title', 'description', 'type', 'url', 'themes', 'image', 'author', 'language'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
@@ -32,6 +32,7 @@ class Post extends Model
 
     public function themes()
     {
-        return $this->belongsToMany(Theme::class, 'post_theme', 'post_id', 'theme_id');
+        return $this->belongsToMany(Theme::class, 'book_theme', 'book_id', 'theme_id');
     }
+
 }

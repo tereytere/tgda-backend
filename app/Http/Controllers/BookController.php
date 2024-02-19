@@ -5,17 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
-use App\Models\Post;
+use App\Models\Book;
 
-
-class PostController extends Controller
+class BookController extends Controller
 {
-
     public function list(): JsonResponse
     {
-        $posts = Post::get();
+        $books = Book::get();
 
-        return response()->json($posts);
+        return response()->json($books);
     }
 
 
@@ -29,7 +27,7 @@ class PostController extends Controller
         // Validate the request
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
-            'body' => 'required|text',
+            'description' => 'required|text',
             'type' => 'required|string',
             'url' => 'required|string',
             'themes' => 'required|string',
@@ -38,18 +36,18 @@ class PostController extends Controller
             'language' => 'required|string'
         ]);
 
-        // Create a new post
-        $post = Post::create($validatedData);
+        // Create a new book
+        $book = Book::create($validatedData);
 
-        return response()->json(['message' => 'Post created successfully', 'post' => $post], Response::HTTP_CREATED);
+        return response()->json(['message' => 'Book created successfully', 'book' => $book], Response::HTTP_CREATED);
     }
 
-    public function update(Request $request, Post $post): JsonResponse
+    public function update(Request $request, Book $book): JsonResponse
     {
         // Validate the request
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'body' => 'required|text',
+            'description' => 'required|text',
             'type' => 'required|string',
             'url' => 'required|string',
             'themes' => 'required|string',
@@ -58,17 +56,18 @@ class PostController extends Controller
             'language' => 'required|string'
         ]);
 
-        // Update the post
-        $post->update($data);
+        // Update the book
+        $book->update($data);
 
-        return response()->json(['message' => 'Post updated successfully', 'post' => $post]);
+        return response()->json(['message' => 'Book updated successfully', 'book' => $book]);
     }
 
-    public function destroy(Post $post): JsonResponse
+    public function destroy(book $book): JsonResponse
     {
-        // Delete the post
-        $post->delete();
+        // Delete the book
+        $book->delete();
 
-        return response()->json(['message' => 'Post deleted successfully']);
+        return response()->json(['message' => 'Book deleted successfully']);
     }
+
 }

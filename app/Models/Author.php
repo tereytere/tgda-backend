@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UUID;
 
 class Author extends Model
 {
     use HasFactory;
+    use UUID;
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['name', 'image', 'posts', 'books', 'youtube', 'instagram', 'webpage', 'podcast'];
+    protected $fillable = ['name', 'image', 'themes', 'youtube', 'instagram', 'webpage', 'podcast', 'language'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
@@ -26,4 +28,15 @@ class Author extends Model
     {
         return $this->hasMany(Post::class, 'post_id', 'id');
     }
+
+    public function books()
+    {
+        return $this->hasMany(Book::class, 'book_id', 'id');
+    }
+
+    public function themes()
+    {
+        return $this->belongsToMany(Theme::class, 'author_theme', 'author_id', 'theme_id');
+    }
+
 }

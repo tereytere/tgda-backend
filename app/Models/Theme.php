@@ -4,14 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\UUID;
+
 
 class Theme extends Model
 {
     use HasFactory;
+    use UUID;
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['name', 'posts', 'books', 'youtube', 'instagram', 'webpage', 'podcast'];
+    protected $fillable = ['name'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
