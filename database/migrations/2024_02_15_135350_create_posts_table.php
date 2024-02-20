@@ -14,9 +14,10 @@ return new class extends Migration {
             $table->uuid('id')->primary();
             $table->string('title');
             $table->text('body');
+            $table->json('themes');
             $table->string('type');
             $table->string('url');
-            $table->string('image')->nullable();
+            $table->string('image', 1024)->nullable();
             $table->uuid('author_id');
             $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
             $table->string('language');

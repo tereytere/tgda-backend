@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
+use App\Models\Author;
 use App\Models\Post;
 
 
@@ -32,14 +33,23 @@ class PostController extends Controller
             'body' => 'required|text',
             'type' => 'required|string',
             'url' => 'required|string',
-            'themes' => 'required|string',
+            'themes' => 'required|json',
             'image' => 'nullable|string',
             'author' => 'required|string',
             'language' => 'required|string'
         ]);
 
-        // Create a new post
-        $post = Post::create($validatedData);
+        // Find the author based on the provided name
+        $author = Author::firstOrCreate(['name' => $validatedData['author']]);
+
+        // Create a new post and associate it with the author
+        $post = $author->posts()->create($validatedData);
+
+        // Attach themes to the post
+        $themeIds = $request->input('themes');
+        if (!empty($themeIds)) {
+            $post->themes()->attach($themeIds);
+        }
 
         return response()->json(['message' => 'Post created successfully', 'post' => $post], Response::HTTP_CREATED);
     }
@@ -52,14 +62,18 @@ class PostController extends Controller
             'body' => 'required|text',
             'type' => 'required|string',
             'url' => 'required|string',
-            'themes' => 'required|string',
+            'themes' => 'required|json',
             'image' => 'nullable|string',
             'author' => 'required|string',
             'language' => 'required|string'
         ]);
 
-        // Update the post
+        // Find the author based on the provided name
+        $author = Author::firstOrCreate(['name' => $data['author']]);
+
+        // Update the post and associate it with the author
         $post->update($data);
+        $post->author()->associate($author)->save();
 
         return response()->json(['message' => 'Post updated successfully', 'post' => $post]);
     }

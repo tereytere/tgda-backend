@@ -13,7 +13,7 @@ class Author extends Model
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['name', 'image', 'themes', 'youtube', 'instagram', 'webpage', 'podcast', 'language'];
+    protected $fillable = ['name', 'image', 'themes', 'posts', 'youtube', 'instagram', 'webpage', 'podcast', 'language'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
@@ -27,11 +27,6 @@ class Author extends Model
     public function posts()
     {
         return $this->hasMany(Post::class, 'post_id', 'id');
-    }
-
-    public function books()
-    {
-        return $this->hasMany(Book::class, 'book_id', 'id');
     }
 
     public function themes()

@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->string('image')->nullable();
+            $table->string('image', 1024)->nullable();
+            $table->json('themes');
+            $table->json('posts');
             $table->string('youtube')->nullable();
             $table->string('instagram')->nullable();
             $table->string('podcast')->nullable();

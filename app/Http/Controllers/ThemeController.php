@@ -29,6 +29,8 @@ class ThemeController extends Controller
         // Validate the request
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'posts' => 'nullable|json',
+            'authors' => 'nullable|json',
         ]);
 
         // Create a new Theme
@@ -42,6 +44,8 @@ class ThemeController extends Controller
         // Validate the request
         $data = $request->validate([
             'name' => 'required|string|max:255',
+            'posts' => 'nullable|json',
+            'authors' => 'nullable|json',
         ]);
 
         // Update the Theme

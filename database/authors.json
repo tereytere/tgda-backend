@@ -1,0 +1,41 @@
+[
+  {
+    "type": "header",
+    "version": "5.2.1",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+  },
+  {
+    "type": "database",
+    "name": "TGdA"
+  },
+  {
+    "type": "table",
+    "name": "authors",
+    "database": "TGdA",
+    "data": [
+      {
+        "name": "Ally Vispo",
+        "image": "https://scontent-fra5-1.cdninstagram.com/v/t51.2885-19/402722218_1076849743329638_8629351511766891753_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_cat=102&_nc_ohc=Kv4dSrkOVWoAX-T_dxl&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAcOxoytV508EaC4ylEfku9rhlCfRDVWYgI_vilDN09yQ&oe=65D8FCA3&_nc_sid=8b3546",
+        "themes": "",
+        "youtube": null,
+        "instagram": "https://www.instagram.com/ally_viamalama/?hl=es",
+        "podcast": "https://open.spotify.com/show/0zRwFhHPYXGiL5QgzS7njF?si=5d466960be47494b",
+        "webpage": "https://www.viamalama.com/blog/",
+        "language": "ES"
+      },
+      {
+        "name": "Una Familia Vegana y Normal",
+        "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/422199339_835453838337348_3517216423484841209_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=100&_nc_ohc=wRyKBOk52wAAX9XcMUM&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfD81PT8TGPzttnk8dStanXRAWDbzXeSfjDH381M9Trivg&oe=65DA2729&_nc_sid=8b3546",
+        "themes": "",
+        "instagram": "https://www.instagram.com/veganaynormal/?hl=es",
+        "youtube": "http://www.youtube.com/@VeganaYNormal",
+        "podcast": "https://open.spotify.com/show/7CWPtRMSXL4SQOg3pHLoYk?si=821ea0b28e5d498a",
+        "webpage": "https://unafamiliaveganaynormal.com/",
+        "language": "ES"
+      },
+      {
+        
+      }
+    ]
+  }
+]

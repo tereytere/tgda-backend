@@ -10,7 +10,7 @@ use App\Models\Author;
 
 class AuthorController extends Controller
 {
-
+    
     public function list(): JsonResponse
     {
         $authors = Author::get();
@@ -30,7 +30,8 @@ class AuthorController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|string',
-            'themes' => 'required|string',
+            'themes' => 'required|json',
+            'posts' => 'nullable|json',
             'youtube' => 'nullable|string',
             'instagram' => 'nullable|string',
             'podcast' => 'nullable|string',
@@ -38,8 +39,14 @@ class AuthorController extends Controller
             'language' => 'required|string',
         ]);
 
-        // Create a new Author
+        // Create a new author
         $author = Author::create($validatedData);
+
+        // Attach themes to the post
+        $themeIds = $request->input('themes');
+        if (!empty($themeIds)) {
+            $author->themes()->attach($themeIds);
+        }
 
         return response()->json(['message' => 'Author created successfully', 'author' => $author], Response::HTTP_CREATED);
     }
@@ -50,7 +57,8 @@ class AuthorController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|string',
-            'themes' => 'required|string',
+            'themes' => 'required|json',
+            'posts' => 'nullable|json',
             'youtube' => 'nullable|string',
             'instagram' => 'nullable|string',
             'podcast' => 'nullable|string',

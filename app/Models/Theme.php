@@ -14,7 +14,7 @@ class Theme extends Model
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'posts', 'authors'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
@@ -28,6 +28,11 @@ class Theme extends Model
     public function posts()
     {
         return $this->belongsToMany(Post::class, 'post_theme', 'theme_id', 'post_id');
+    }
+
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class, 'author_theme', 'theme_id', 'author_id');
     }
 
 }
