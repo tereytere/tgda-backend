@@ -16,9 +16,14 @@
       {
         "name": "Ally Vispo",
         "image": "https://scontent-fra5-1.cdninstagram.com/v/t51.2885-19/402722218_1076849743329638_8629351511766891753_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-fra5-1.cdninstagram.com&_nc_cat=102&_nc_ohc=Kv4dSrkOVWoAX-T_dxl&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAcOxoytV508EaC4ylEfku9rhlCfRDVWYgI_vilDN09yQ&oe=65D8FCA3&_nc_sid=8b3546",
-        "themes": "",
-        "youtube": null,
-        "instagram": "https://www.instagram.com/ally_viamalama/?hl=es",
+        "themes": [
+          "moda",
+          "belleza",
+          "sostenibilidad",
+          "veganismo",
+          "medioambiente"
+        ],
+        "instagram": "https://www.instagram.com/ally_viamalama/",
         "podcast": "https://open.spotify.com/show/0zRwFhHPYXGiL5QgzS7njF?si=5d466960be47494b",
         "webpage": "https://www.viamalama.com/blog/",
         "language": "ES"
@@ -26,15 +31,129 @@
       {
         "name": "Una Familia Vegana y Normal",
         "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/422199339_835453838337348_3517216423484841209_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=100&_nc_ohc=wRyKBOk52wAAX9XcMUM&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfD81PT8TGPzttnk8dStanXRAWDbzXeSfjDH381M9Trivg&oe=65DA2729&_nc_sid=8b3546",
-        "themes": "",
-        "instagram": "https://www.instagram.com/veganaynormal/?hl=es",
+        "themes": [
+          "crianza",
+          "veganismo",
+          "activismo"
+        ],
+        "instagram": "https://www.instagram.com/veganaynormal/",
         "youtube": "http://www.youtube.com/@VeganaYNormal",
         "podcast": "https://open.spotify.com/show/7CWPtRMSXL4SQOg3pHLoYk?si=821ea0b28e5d498a",
         "webpage": "https://unafamiliaveganaynormal.com/",
         "language": "ES"
       },
       {
-        
+        "name": "Bárbara González",
+        "image": "https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/385737066_3764102673819469_2195876015940246441_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=101&_nc_ohc=nrKkFMrpe_gAX81dmBy&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfA1akJI_otnE0dWkRYPhRw-uKxzzuQAB0yGi1HLUZEDTw&oe=65DB04F9&_nc_sid=8b3546",
+        "themes": [
+          "sostenibilidad",
+          "veganismo",
+          "activismo",
+          "investigación",
+          "medioambiente"
+        ],
+        "instagram": "https://www.instagram.com/barbarapgs/",
+        "youtube": "https://www.youtube.com/@barbarapgs",
+        "podcast": "https://open.spotify.com/show/0aHzsp1r7bulvko3GwDYjh?si=5ba1ab20beeb4df8",
+        "webpage": "https://www.barbarapgs.com/",
+        "language": "ES"
+      },
+      {
+        "name": "Tamara Alonso",
+        "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/123993541_388932265635129_1809530183460074216_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=Ae4s1Y48wB4AX_0DzRc&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCxV2047v5ecLFnwq0V9aOBoWZwhdsWcdc_7EZh3DeTDQ&oe=65DBE4F8&_nc_sid=8b3546",
+        "themes": [
+          "sostenibilidad",
+          "veganismo",
+          "alimentación",
+          "crianza"
+        ],
+        "instagram": "https://www.instagram.com/dedondesacolasproteinas/",
+        "youtube": "https://www.youtube.com/@dedondesacolasproteinas",
+        "webpage": "https://www.dedondesacolasproteinas.com/",
+        "language": "ES"
+      },
+      {
+        "name": "Aitor Sánchez",
+        "image": "https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/154813118_2776451139271770_5490745995274426601_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=106&_nc_ohc=OUqUF-ndgEAAX-WF7yU&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCQK8EZDaYwg-Hjbc0EO11hvMrPfF1CCF37DuO1vUuTzg&oe=65DCE8FE&_nc_sid=8b3546",
+        "themes": [
+          "sostenibilidad",
+          "veganismo",
+          "alimentación",
+          "investigación"
+        ],
+        "instagram": "https://www.instagram.com/midietacojea/",
+        "youtube": "https://www.youtube.com/@Midietacojea",
+        "podcast": "https://open.spotify.com/show/4KXdIPTglWS0YgSY4QVThy?si=5545c9814326418b",
+        "webpage": "https://www.midietacojea.com/",
+        "language": "ES"
+      },
+      {
+        "name": "Xavi",
+        "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/329343072_757438599292211_9084144257047356787_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=9R7xKz5e9SoAX-HB1bN&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBXllN-C6LY6jdOzK0qREkLtR7NP2_4jjL_5Te0ZU3RLA&oe=65DD118D&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "activismo",
+          "animales",
+          "ayuda"
+        ],
+        "instagram": "https://www.instagram.com/xavi.animal/",
+        "youtube": "https://www.youtube.com/@Xavi.animal",
+        "webpage": "https://jaguartorg.com/",
+        "language": "ES"
+      },
+      {
+        "name": "Patri Medio Limón",
+        "image": "https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/66245068_2498045080257698_4840186756840030208_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=102&_nc_ohc=Xsb95vvTAb4AX_awN6d&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfAlPdBxwVxdLOEfrLAaLfxoohJv2UE48Qfra76XtfYV-A&oe=65DB9803&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "alimentación",
+          "crianza"
+        ],
+        "instagram": "https://www.instagram.com/patrimediolimon/",
+        "youtube": "https://www.youtube.com/@mediolimon9859",
+        "webpage": "https://patrimediolimon.wordpress.com/",
+        "language": "ES"
+      },
+      {
+        "name": "Paula González Carracedo",
+        "image": "https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/357430850_291005613317251_1999450405857728412_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=107&_nc_ohc=GOH2WTZlz_AAX_WGF18&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBPVdOCj2wSSQ8qplfElCRZRuoSAWqeKyZpfltb-Yp-DA&oe=65DB8F5A&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "activismo",
+          "investigación",
+          "sostenibilidad"
+        ],
+        "spotify": "https://open.spotify.com/show/6QgM9rmLJtXlbQcqcm8ZiI?si=348e1ead814d4f9f",
+        "instagram": "https://www.instagram.com/paulitavegan/",
+        "youtube": "https://www.youtube.com/@PaulitaVegan",
+        "webpage": "https://theveganagency.es/",
+        "language": "ES"
+      },
+      {
+        "name": "Sergio Ojeda",
+        "image": "https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/350336513_919625422486310_7259271351860857845_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=102&_nc_ohc=wK0x6I3CX3YAX-jWW_5&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDyfqkuYxMM82U7jfpx82XOTMl_6WjdSOLzoi2FCfkqjQ&oe=65DB9F3D&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "alimentación"
+        ],
+        "spotify": "",
+        "instagram": "https://www.instagram.com/sergiojeda/",
+        "youtube": "",
+        "webpage": "",
+        "language": "ES"
+      },
+      {
+        "name": "Cristian Alonso",
+        "image": "https://scontent-mad1-1.cdninstagram.com/v/t51.2885-19/338702821_232199792629994_6012486732924488122_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=102&_nc_ohc=fmUNBc-gjz8AX-0ulsD&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDldENe-Z-NSbvspvHUY0AjLDreTZFfLidfLUt80OKGig&oe=65DB3A4C&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "alimentación"
+        ],
+        "spotify": "",
+        "instagram": "https://www.instagram.com/lapastanoengorda/",
+        "youtube": "https://www.youtube.com/@lapastanoengorda",
+        "webpage": "",
+        "language": "ES"
       }
     ]
   }

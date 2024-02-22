@@ -14,7 +14,7 @@ class Post extends Model
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['title', 'body', 'type', 'url', 'themes', 'image', 'author', 'language'];
+    protected $fillable = ['title', 'body', 'type', 'url', 'image', 'author', 'language'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
@@ -22,6 +22,11 @@ class Post extends Model
     // Define the data type of the primary key
     protected $keyType = 'string';
 
+        // Cast themes field to JSON
+        protected $casts = [
+            'themes' => 'json', 
+        ];
+    
     // Disable auto-incrementing for primary key
     public $incrementing = false;
 
@@ -32,6 +37,6 @@ class Post extends Model
 
     public function themes()
     {
-        return $this->belongsToMany(Theme::class, 'post_theme', 'post_id', 'theme_id');
+        return $this->belongsToMany(Theme::class, 'post_theme', 'post_id', 'theme_id')->withTimestamps();
     }
 }

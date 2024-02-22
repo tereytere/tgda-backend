@@ -6,18 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use App\Models\Author;
-
+use App\Models\Theme;
 
 class AuthorController extends Controller
 {
-    
     public function list(): JsonResponse
     {
         $authors = Author::get();
-
         return response()->json($authors);
     }
-
 
     public function create(): JsonResponse
     {
@@ -26,39 +23,37 @@ class AuthorController extends Controller
 
     public function store(Request $request): JsonResponse
     {
-        // Validate the request
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'image' => 'nullable|string',
-            'themes' => 'required|json',
-            'posts' => 'nullable|json',
-            'youtube' => 'nullable|string',
-            'instagram' => 'nullable|string',
-            'podcast' => 'nullable|string',
-            'webpage' => 'nullable|string',
-            'language' => 'required|string',
-        ]);
+        try {
+            $validatedData = $request->validate([
+                'name' => 'required|string|max:255',
+                'image' => 'nullable|string',
+                'themes' => 'nullable|array',
+                'youtube' => 'nullable|string',
+                'instagram' => 'nullable|string',
+                'podcast' => 'nullable|string',
+                'webpage' => 'nullable|string',
+                'language' => 'required|string',
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return response()->json(['message' => 'Validation error', 'errors' => $e->errors()], Response::HTTP_BAD_REQUEST);
+        }
 
-        // Create a new author
         $author = Author::create($validatedData);
 
-        // Attach themes to the post
-        $themeIds = $request->input('themes');
-        if (!empty($themeIds)) {
-            $author->themes()->attach($themeIds);
-        }
+        // Check if themes are provided and attach existing themes to the author
+        $this->attachThemesToAuthor($author, $validatedData['themes'] ?? []);
+
+        $author->load('themes');
 
         return response()->json(['message' => 'Author created successfully', 'author' => $author], Response::HTTP_CREATED);
     }
 
     public function update(Request $request, Author $author): JsonResponse
     {
-        // Validate the request
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|string',
-            'themes' => 'required|json',
-            'posts' => 'nullable|json',
+            'themes' => 'nullable|array',
             'youtube' => 'nullable|string',
             'instagram' => 'nullable|string',
             'podcast' => 'nullable|string',
@@ -66,17 +61,42 @@ class AuthorController extends Controller
             'language' => 'required|string',
         ]);
 
-        // Update the Author
         $author->update($data);
+
+        // Check if themes are provided and update them accordingly
+        $this->syncThemesForAuthor($author, $data['themes'] ?? []);
+
+        $author->load('themes');
 
         return response()->json(['message' => 'Author updated successfully', 'author' => $author]);
     }
 
     public function destroy(Author $author): JsonResponse
     {
+        // Detach all themes associated with the author before deleting
+        $author->themes()->detach();
+
         // Delete the Author
         $author->delete();
 
         return response()->json(['message' => 'Author deleted successfully']);
+    }
+
+    private function attachThemesToAuthor(Author $author, array $themeNames)
+    {
+        foreach ($themeNames as $themeName) {
+            $theme = Theme::firstOrCreate(['name' => $themeName]);
+            $author->themes()->attach($theme->id);
+        }
+    }
+
+    private function syncThemesForAuthor(Author $author, array $themeNames)
+    {
+        $themeIds = [];
+        foreach ($themeNames as $themeName) {
+            $theme = Theme::firstOrCreate(['name' => $themeName]);
+            $themeIds[] = $theme->id;
+        }
+        $author->themes()->sync($themeIds);
     }
 }

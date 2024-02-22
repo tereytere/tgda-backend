@@ -7,17 +7,14 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use App\Models\Theme;
 
-
 class ThemeController extends Controller
 {
-
     public function list(): JsonResponse
     {
         $themes = Theme::get();
 
         return response()->json($themes);
     }
-
 
     public function create(): JsonResponse
     {
@@ -33,8 +30,15 @@ class ThemeController extends Controller
             'authors' => 'nullable|json',
         ]);
 
+        // Convert JSON strings to arrays only if they are present in the request
+        $posts = $request->has('posts') ? json_decode($validatedData['posts'], true) : null;
+        $authors = $request->has('authors') ? json_decode($validatedData['authors'], true) : null;
+
         // Create a new Theme
-        $theme = Theme::create($validatedData);
+        $theme = Theme::create(array_merge($validatedData, [
+            'posts' => $posts,
+            'authors' => $authors,
+        ]));
 
         return response()->json(['message' => 'Theme created successfully', 'theme' => $theme], Response::HTTP_CREATED);
     }
@@ -48,15 +52,21 @@ class ThemeController extends Controller
             'authors' => 'nullable|json',
         ]);
 
+        // Convert JSON strings to arrays
+        $posts = json_decode($data['posts'], true);
+        $authors = json_decode($data['authors'], true);
+
         // Update the Theme
-        $theme->update($data);
+        $theme->update(array_merge($data, [
+            'posts' => $posts,
+            'authors' => $authors,
+        ]));
 
         return response()->json(['message' => 'Theme updated successfully', 'theme' => $theme]);
     }
 
     public function destroy(Theme $theme): JsonResponse
     {
-        // Delete the Theme
         $theme->delete();
 
         return response()->json(['message' => 'Theme deleted successfully']);

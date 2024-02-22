@@ -11,12 +11,11 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('post_theme', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('post_id');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
-            $table->uuid('theme_id');
-            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
+            $table->foreignUuid('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreignUuid('theme_id')->references('id')->on('themes')->onDelete('cascade');
             $table->timestamps();
+            // Composite primary key
+            $table->primary(['post_id', 'theme_id']);
         });
     }
 

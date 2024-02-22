@@ -1,0 +1,20 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"TGdA"},
+{"type":"table","name":"themes","database":"TGdA","data":
+[
+{"id":"2484eba7-b7f5-43ed-af5b-bf5ea5994fac","name":"veganismo","posts":null,"authors":null,"created_at":"2024-02-21 12:25:38","updated_at":"2024-02-21 12:25:38"},
+{"id":"3bb39633-5396-4aef-ac50-df74427673f3","name":"belleza","posts":null,"authors":null,"created_at":"2024-02-21 12:26:14","updated_at":"2024-02-21 12:26:14"},
+{"id":"45a1e2e6-a40e-4bd6-be65-9d46efee7be2","name":"medioambiente","posts":null,"authors":null,"created_at":"2024-02-21 12:26:06","updated_at":"2024-02-21 12:26:06"},
+{"id":"5166ebfa-2aec-4695-afab-28f307c87c51","name":"moda","posts":null,"authors":null,"created_at":"2024-02-21 12:26:35","updated_at":"2024-02-21 12:26:35"},
+{"id":"5227595d-f7df-403c-bd2e-88f435f598d7","name":"alimentación","posts":null,"authors":null,"created_at":"2024-02-21 12:26:21","updated_at":"2024-02-21 12:26:21"},
+{"id":"89406289-8942-46bb-8700-c9bbe54e0617","name":"investigación","posts":null,"authors":null,"created_at":"2024-02-21 12:25:45","updated_at":"2024-02-21 12:25:45"},
+{"id":"9e8e345e-ee0e-46c2-8653-0ea4ada83f9e","name":"activismo","posts":null,"authors":null,"created_at":"2024-02-21 12:25:53","updated_at":"2024-02-21 12:25:53"},
+{"id":"bed34ef5-6ab7-409c-8219-6d91cd396bd8","name":"ayuda","posts":null,"authors":null,"created_at":"2024-02-21 13:24:47","updated_at":"2024-02-21 13:24:47"},
+{"id":"d8f9e42e-102d-41e6-83aa-9bd29723f00e","name":"crianza","posts":null,"authors":null,"created_at":"2024-02-21 12:25:59","updated_at":"2024-02-21 12:25:59"},
+{"id":"e09b0190-f2b1-4e05-bf18-9eaffd65ba6a","name":"salud","posts":null,"authors":null,"created_at":"2024-02-21 12:25:28","updated_at":"2024-02-21 12:25:28"},
+{"id":"e5a2cdda-bc18-46a0-a66a-f28771eec87c","name":"sostenibilidad","posts":null,"authors":null,"created_at":"2024-02-21 12:26:28","updated_at":"2024-02-21 12:26:28"},
+{"id":"f320f5a4-a490-4791-ba34-3beee731a5c0","name":"animales","posts":null,"authors":null,"created_at":"2024-02-21 12:26:40","updated_at":"2024-02-21 12:26:40"}
+]
+}
+]

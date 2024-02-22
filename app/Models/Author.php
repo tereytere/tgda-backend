@@ -13,13 +13,18 @@ class Author extends Model
 
     protected $guarded = ['id'];
 
-    protected $fillable = ['name', 'image', 'themes', 'posts', 'youtube', 'instagram', 'webpage', 'podcast', 'language'];
+    protected $fillable = ['name', 'image', 'youtube', 'instagram', 'webpage', 'podcast', 'language'];
 
     // Override the default primary key
     protected $primaryKey = 'id';
 
     // Define the data type of the primary key
     protected $keyType = 'string';
+
+    // Cast themes field to JSON
+    protected $casts = [
+        'themes' => 'json', 
+    ];
 
     // Disable auto-incrementing for primary key
     public $incrementing = false;
@@ -31,7 +36,7 @@ class Author extends Model
 
     public function themes()
     {
-        return $this->belongsToMany(Theme::class, 'author_theme', 'author_id', 'theme_id');
+        return $this->belongsToMany(Theme::class, 'author_theme', 'author_id', 'theme_id')->withTimestamps();
     }
 
 }
