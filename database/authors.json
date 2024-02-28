@@ -88,7 +88,7 @@
         "language": "ES"
       },
       {
-        "name": "Xavi",
+        "name": "Xavi Animal",
         "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/329343072_757438599292211_9084144257047356787_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=9R7xKz5e9SoAX-HB1bN&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBXllN-C6LY6jdOzK0qREkLtR7NP2_4jjL_5Te0ZU3RLA&oe=65DD118D&_nc_sid=8b3546",
         "themes": [
           "veganismo",
@@ -154,6 +154,55 @@
         "youtube": "https://www.youtube.com/@lapastanoengorda",
         "webpage": "",
         "language": "ES"
+      },
+      {
+        "name": "Gloria Carrión",
+        "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/412605642_1040664343864030_4343688827637105008_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=110&_nc_ohc=zB3cfnrZBD4AX8eHcsR&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfB2w8cgj4wyV2X9yv39r5BFU2BJjJqiDwMgeCQT5TuH6w&oe=65DCF6AE&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "alimentación",
+          "sostenibilidad"
+        ],
+        "spotify": "",
+        "instagram": "https://www.instagram.com/lagloriavegana/",
+        "youtube": "",
+        "webpage": "https://www.lagloriavegana.com/",
+        "language": "ES"
+      },
+      {
+        "name": "Izaskun Unibaso",
+        "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/342091290_274603108227344_1034654882491162809_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=108&_nc_ohc=t6SPQepa5Q8AX_FbqB2&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfDOfzwdTFrMG6avZhSDZE4Q8UjJSU2ke9Ej30ANyptGiw&oe=65DCDE84&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "alimentación",
+          "sostenibilidad",
+          "crianza"
+        ],
+        "spotify": "",
+        "instagram": "https://www.instagram.com/peace_l0ve_vegan/",
+        "youtube": "https://www.youtube.com/@peacelovevegan9679",
+        "webpage": "https://peacelovevegan.es/",
+        "language": "ES"
+      },
+      {
+        "name": "Ibai Vegan",
+        "image": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/369151063_776111384529635_2069081655520627842_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_cat=111&_nc_ohc=ywHmnM4k4EYAX804hET&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBrkZHyxlsPe-1IHo9IoiGlPuqp3V_BPY41jFVunGGt7g&oe=65DB45FC&_nc_sid=8b3546",
+        "themes": [
+          "veganismo",
+          "alimentación",
+          "sostenibilidad",
+          "activismo",
+          "investigación",
+          "medioambiente"
+        ],
+        "spotify": "https://open.spotify.com/show/7rgFvrfap2bLcItGw45QZH?si=16a74e50044b45b1",
+        "instagram": "https://www.instagram.com/ibaivegan/",
+        "youtube": "https://www.youtube.com/@animaleshumanos",
+        "webpage": "",
+        "language": "ES"
+      },
+      {
+        
       }
     ]
   }

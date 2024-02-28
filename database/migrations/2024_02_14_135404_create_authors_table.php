@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('instagram')->nullable();
             $table->string('podcast')->nullable();
             $table->string('webpage')->nullable();
-            $table->string('language');
+            $table->string('language')->nullable();
             $table->timestamps();
         });
     }

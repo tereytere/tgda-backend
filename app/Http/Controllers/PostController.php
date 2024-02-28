@@ -32,16 +32,29 @@ class PostController extends Controller
             'themes' => 'required|array',
             'image' => 'nullable|string',
             'author' => 'required|string',
+            'author_id' => 'nullable|string', // Make author_id nullable
             'language' => 'required|string'
         ]);
 
+        // Find or create the author based on the provided name
         $author = Author::firstOrCreate(['name' => $validatedData['author']]);
-        $post = $author->posts()->create($validatedData);
 
+        // Assign the author's ID to author_id field
+        $validatedData['author_id'] = $author->id;
+
+        // Create the post with the validated data
+        $post = new Post($validatedData);
+        $post->author_id = $author->id; // Assign author_id directly
+
+        $post->save();
+
+        // Attach themes to the post
         $this->attachThemesToPost($post, $validatedData['themes'] ?? []);
 
+        // Load author and themes to return in the response
         $post->load('author', 'themes');
 
+        // Return the response
         return response()->json(['message' => 'Post created successfully', 'post' => $post], Response::HTTP_CREATED);
     }
 
@@ -55,6 +68,7 @@ class PostController extends Controller
             'themes' => 'required|array',
             'image' => 'nullable|string',
             'author' => 'required|string',
+            'author_id' => 'required|string',
             'language' => 'required|string'
         ]);
 
@@ -73,7 +87,7 @@ class PostController extends Controller
     {
         // Detach all themes associated with the post before deleting
         $post->themes()->detach();
-        
+
         // Delete the post
         $post->delete();
 

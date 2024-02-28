@@ -15,9 +15,10 @@ return new class extends Migration {
             $table->string('title');
             $table->text('body');
             $table->string('type');
-            $table->string('url');
+            $table->string('url', 1024)->nullable();
             $table->string('image', 1024)->nullable();
-            $table->foreignUuid('author_id')->references('id')->on('authors')->onDelete('cascade');
+            $table->string('author');
+            $table->foreignUuid('author_id')->references('id')->on('authors')->onDelete('cascade')->nullable();
             $table->string('language');
             $table->timestamps();
         });
