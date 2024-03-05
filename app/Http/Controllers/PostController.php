@@ -11,9 +11,19 @@ use App\Models\Theme;
 
 class PostController extends Controller
 {
-    public function list(): JsonResponse
+    public function list(Request $request): JsonResponse
     {
-        $posts = Post::with('author', 'themes')->get();
+        $query = Post::with('author', 'themes');
+
+        // Check if a type filter is provided in the request
+        if ($request->has('type')) {
+            $type = $request->input('type');
+            $query->where('type', $type);
+        }
+
+        // Get the filtered posts
+        $posts = $query->get();
+
         return response()->json($posts);
     }
 
