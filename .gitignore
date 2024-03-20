@@ -19,3 +19,9 @@ yarn-error.log
 /.vscode
 composer.lock
 package-lock.json
+
+#SFTP
+.vscode
+
+#package-lock.json
+package-lock.json
