@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function list(Request $request): JsonResponse
     {
-        $query = Post::with('author', 'themes');
+        $query = Post::query();
 
         // Check if a type filter is provided in the request
         if ($request->has('type')) {
@@ -21,8 +21,14 @@ class PostController extends Controller
             $query->where('type', $type);
         }
 
+        // Check if an author ID filter is provided in the request
+        if ($request->has('author_id')) {
+            $authorId = $request->input('author_id');
+            $query->where('author_id', $authorId);
+        }
+
         // Get the filtered posts
-        $posts = $query->get();
+        $posts = $query->with('author', 'themes')->get();
 
         return response()->json($posts);
     }

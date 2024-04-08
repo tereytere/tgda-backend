@@ -10,8 +10,16 @@ use App\Models\Theme;
 
 class AuthorController extends Controller
 {
-    public function list(): JsonResponse
+    public function list(Request $request): JsonResponse
     {
+        if ($request->has('authorId')) {
+            $author = Author::find($request->input('authorId'));
+            if (!$author) {
+                return response()->json(['error' => 'Author not found'], Response::HTTP_NOT_FOUND);
+            }
+            return response()->json($author);
+        }
+
         $authors = Author::get();
         return response()->json($authors);
     }

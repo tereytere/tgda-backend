@@ -65,6 +65,14 @@ class ThemeController extends Controller
         return response()->json(['message' => 'Theme updated successfully', 'theme' => $theme]);
     }
 
+    public function getRelated(Theme $theme): JsonResponse
+{
+    // Eager load related posts and authors for the theme
+    $themeWithRelations = $theme->load(['posts', 'authors']);
+
+    return response()->json(['theme' => $themeWithRelations]);
+}
+
     public function destroy(Theme $theme): JsonResponse
     {
         $theme->delete();
