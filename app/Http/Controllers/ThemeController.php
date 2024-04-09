@@ -66,12 +66,26 @@ class ThemeController extends Controller
     }
 
     public function getRelated(Theme $theme): JsonResponse
-{
-    // Eager load related posts and authors for the theme
-    $themeWithRelations = $theme->load(['posts', 'authors']);
+    {
+        // Eager load related posts and authors for the theme
+        $themeWithRelations = $theme->load(['posts', 'authors']);
 
-    return response()->json(['theme' => $themeWithRelations]);
-}
+        return response()->json(['theme' => $themeWithRelations]);
+    }
+
+    public function getRelatedPosts(Theme $theme): JsonResponse
+    {
+        $posts = $theme->posts()->get();
+
+        return response()->json(['posts' => $posts]);
+    }
+
+    public function getRelatedAuthors(Theme $theme): JsonResponse
+    {
+        $authors = $theme->authors()->get();
+
+        return response()->json(['authors' => $authors]);
+    }
 
     public function destroy(Theme $theme): JsonResponse
     {

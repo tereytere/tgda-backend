@@ -48,5 +48,7 @@ Route::post('/theme', 'App\Http\Controllers\ThemeController@store');
 
 Route::post('/themes/{theme}', 'App\Http\Controllers\ThemeController@update');
 Route::get('/themes/{theme}', 'App\Http\Controllers\ThemeController@getRelated');
+Route::get('/themes/{theme}/posts', 'App\Http\Controllers\ThemeController@getRelatedPosts');
+Route::get('/themes/{theme}/authors', 'App\Http\Controllers\ThemeController@getRelatedAuthors');
 
 Route::delete('/themes/{theme}', 'App\Http\Controllers\ThemeController@destroy');
