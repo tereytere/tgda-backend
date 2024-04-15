@@ -65,7 +65,7 @@ class PostController extends Controller
         $post->save();
 
         // Attach themes to the post
-        $this->attachThemesToPost($post, $validatedData['themes'] ?? []);
+        $this->attachThemes($post, $validatedData['themes'] ?? []);
 
         // Load author and themes to return in the response
         $post->load('author', 'themes');
@@ -110,7 +110,7 @@ class PostController extends Controller
         return response()->json(['message' => 'Post deleted successfully']);
     }
 
-    private function attachThemesToPost(Post $post, array $themeNames)
+    private function attachThemes(Post $post, array $themeNames)
     {
         foreach ($themeNames as $themeName) {
             $theme = Theme::firstOrCreate(['name' => $themeName]);
@@ -126,5 +126,27 @@ class PostController extends Controller
             $themeIds[] = $theme->id;
         }
         $post->themes()->sync($themeIds);
+    }
+
+    public function getRelatedData(Post $post): JsonResponse
+    {
+        // Eager load related themes and the author for the post
+        $postWithRelations = $post->load(['themes', 'author']);
+    
+        return response()->json(['post' => $postWithRelations]);
+    }
+    
+    public function getRelatedThemes(Post $post): JsonResponse
+    {
+        $themes = $post->themes()->get();
+
+        return response()->json(['themes' => $themes]);
+    }
+
+    public function getRelatedAuthors(Post $post): JsonResponse
+    {
+        $authors = $post->authors()->get();
+
+        return response()->json(['authors' => $authors]);
     }
 }

@@ -48,24 +48,23 @@ class ThemeController extends Controller
         // Validate the request
         $data = $request->validate([
             'name' => 'required|string|max:255',
-            'posts' => 'nullable|json',
-            'authors' => 'nullable|json',
         ]);
 
-        // Convert JSON strings to arrays
-        $posts = json_decode($data['posts'], true);
-        $authors = json_decode($data['authors'], true);
+        try {
+            // Update the Theme
+            $theme->update($data);
 
-        // Update the Theme
-        $theme->update(array_merge($data, [
-            'posts' => $posts,
-            'authors' => $authors,
-        ]));
+            return response()->json(['message' => 'Theme updated successfully', 'theme' => $theme]);
+        } catch (\Exception $e) {
+            // Log the error message for debugging
+            logger()->error('Error updating theme: ' . $e->getMessage());
 
-        return response()->json(['message' => 'Theme updated successfully', 'theme' => $theme]);
+            return response()->json(['message' => 'Error updating theme'], 500);
+        }
     }
 
-    public function getRelated(Theme $theme): JsonResponse
+
+    public function getRelatedData(Theme $theme): JsonResponse
     {
         // Eager load related posts and authors for the theme
         $themeWithRelations = $theme->load(['posts', 'authors']);

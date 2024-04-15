@@ -107,4 +107,26 @@ class AuthorController extends Controller
         }
         $author->themes()->sync($themeIds);
     }
+
+    public function getRelatedData(Author $author): JsonResponse
+    {
+        // Eager load related posts and themes for the author
+        $authorWithRelations = $author->load(['posts', 'themes']);
+
+        return response()->json(['author' => $authorWithRelations]);
+    }
+
+    public function getRelatedPosts(Author $author): JsonResponse
+    {
+        $posts = $author->posts()->get();
+
+        return response()->json(['posts' => $posts]);
+    }
+
+    public function getRelatedThemes(Author $author): JsonResponse
+    {
+        $themes = $author->themes()->get();
+
+        return response()->json(['themes' => $themes]);
+    }
 }

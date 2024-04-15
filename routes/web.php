@@ -26,7 +26,10 @@ Route::get('/posts', 'App\Http\Controllers\PostController@list');
 Route::get('/post', 'App\Http\Controllers\PostController@create');
 Route::post('/post', 'App\Http\Controllers\PostController@store');
 
-Route::post('/posts/{post}', 'App\Http\Controllers\PostController@update');
+Route::put('/posts/{post}', 'App\Http\Controllers\PostController@update');
+Route::get('/posts/{post}', 'App\Http\Controllers\PostController@getRelatedData');
+Route::get('/posts/{post}/authors', 'App\Http\Controllers\PostController@getRelatedAuthors');
+Route::get('/posts/{post}/themes', 'App\Http\Controllers\PostController@getRelatedThemes');
 
 Route::delete('/posts/{post}', 'App\Http\Controllers\PostController@destroy');
 
@@ -36,7 +39,10 @@ Route::get('/authors', 'App\Http\Controllers\AuthorController@list');
 Route::get('/author', 'App\Http\Controllers\AuthorController@create');
 Route::post('/author', 'App\Http\Controllers\AuthorController@store');
 
-Route::post('/authors/{author}', 'App\Http\Controllers\AuthorController@update');
+Route::put('/authors/{author}', 'App\Http\Controllers\AuthorController@update');
+Route::get('/authors/{author}', 'App\Http\Controllers\AuthorController@getRelatedData');
+Route::get('/authors/{author}/posts', 'App\Http\Controllers\AuthorController@getRelatedPosts');
+Route::get('/authors/{author}/themes', 'App\Http\Controllers\AuthorController@getRelatedThemes');
 
 Route::delete('/authors/{author}', 'App\Http\Controllers\AuthorController@destroy');
 
@@ -46,8 +52,8 @@ Route::get('/themes', 'App\Http\Controllers\ThemeController@list');
 Route::get('/theme', 'App\Http\Controllers\ThemeController@create');
 Route::post('/theme', 'App\Http\Controllers\ThemeController@store');
 
-Route::post('/themes/{theme}', 'App\Http\Controllers\ThemeController@update');
-Route::get('/themes/{theme}', 'App\Http\Controllers\ThemeController@getRelated');
+Route::put('/themes/{theme}', 'App\Http\Controllers\ThemeController@update');
+Route::get('/themes/{theme}', 'App\Http\Controllers\ThemeController@getRelatedData');
 Route::get('/themes/{theme}/posts', 'App\Http\Controllers\ThemeController@getRelatedPosts');
 Route::get('/themes/{theme}/authors', 'App\Http\Controllers\ThemeController@getRelatedAuthors');
 
