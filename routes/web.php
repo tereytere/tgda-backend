@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Admin Login
-Route::post('/login', 'App\Http\Controllers\AuthController@login');
+Route::post('/login', 'App\Http\Controllers\LoginController@login');
+
+// Cookies
+Route::post('/set-cookie', 'App\Http\Controllers\CookieController@setCookie');
 
 // Search
 Route::get('/search', 'App\Http\Controllers\SearchController@search');
