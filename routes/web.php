@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Admin Login
-Route::post('/login', 'App\Http\Controllers\LoginController@login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
 // Cookies
 Route::post('/set-cookie', 'App\Http\Controllers\CookieController@setCookie');

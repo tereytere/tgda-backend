@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 07, 2024 at 06:16 PM
+-- Generation Time: May 21, 2024 at 12:14 PM
 -- Server version: 8.0.37
 -- PHP Version: 8.2.10-2ubuntu1
 
@@ -28,17 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `authors` (
-  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `podcast` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `webpage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `language` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `podcast` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `webpage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `language` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `authors`
@@ -68,11 +68,11 @@ INSERT INTO `authors` (`id`, `name`, `image`, `youtube`, `instagram`, `podcast`,
 --
 
 CREATE TABLE `author_theme` (
-  `author_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `theme_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `author_id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `theme_id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `author_theme`
@@ -137,13 +137,13 @@ INSERT INTO `author_theme` (`author_id`, `theme_id`, `created_at`, `updated_at`)
 
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -153,16 +153,15 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
@@ -170,7 +169,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2024_02_15_135350_create_posts_table', 1),
 (7, '2024_02_15_135419_create_themes_table', 1),
 (8, '2024_02_16_131833_create_post_theme_table', 1),
-(9, '2024_02_19_140248_create_author_theme_table', 1);
+(9, '2024_02_19_140248_create_author_theme_table', 1),
+(10, '2014_10_12_000000_create_users_table', 2);
 
 -- --------------------------------------------------------
 
@@ -179,10 +179,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -192,16 +192,16 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -210,31 +210,31 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `posts` (
-  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `author_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `language` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `author` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `author_id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `language` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `type`, `url`, `image`, `author`, `author_id`, `language`, `created_at`, `updated_at`) VALUES
-('37766245-9338-451e-87a8-bab140860070', 'Bruno León (Activista Trans) | Transexualidad, veganismo y más', 'Hoy tenemos a Bruno León con quién aprenderemos y escucharemos la historia de una persona trans', 'podcast', 'https://open.spotify.com/episode/10dOWUhvVWTwS5ynojjAqt?si=sdYlLMjETzW98VAbOCfEbA', 'https://i.scdn.co/image/ab6765630000ba8ab76ffafb73ee09b9227a1ce9', 'Ibai Vegan', 'f1506ee9-7002-41ec-85a3-d78dab6ab2e9', 'ES', '2024-04-09 10:25:29', '2024-04-09 10:25:29'),
+('37766245-9338-451e-87a8-bab140860070', 'Bruno León (Activista Trans) | Transexualidad, veganismo y más', 'Hoy tenemos a Bruno León con quién aprenderemos y escucharemos la historia de una persona trans', 'podcast', 'https://open.spotify.com/embed/episode/10dOWUhvVWTwS5ynojjAqt?utm_source=generator', 'https://i.scdn.co/image/ab6765630000ba8ab76ffafb73ee09b9227a1ce9', 'Ibai Vegan', 'f1506ee9-7002-41ec-85a3-d78dab6ab2e9', 'ES', '2024-04-09 10:25:29', '2024-04-09 10:25:29'),
 ('4130fed5-2fa7-46e6-9e79-292b05225aca', 'Las 5 acciones que más reducirían el impacto medioambiental de los españoles', 'A veces parece que vivimos en el día de la marmota. No hace ni 3 meses que estaba escribiendo sobre cómo evitar olas de calor a corto plazo. Más de 500 muertes. Más de 30 incendios. Así llevamos la ola de calor de julio. ¿Desolador? Sin duda. Pero en medio de todas las emociones sigue la acción y la ciencia. Varios estudios muestran que estas situaciones extremas son el punto de inflexión que mucha gente necesita para empezar a actuar. Para todas esas personas escribo este artículo. Una recopilación de las acciones más importantes. ¿Y cómo sé que son las más importantes? Porque me voy a basar en los datos. Concretamente la referencia de este artículo es el Informe de Sostenibilidad de Consumo de España (2022). Cómo por ahora ningún gobierno me ha pedido un informe de las medidas efectivas, lo que te voy a proponer son las acciones que podemos poner en práctica la gente corriente.', 'webpage', 'https://www.barbarapgs.com/blog/las-5-acciones-que-ms-reduciran-el-impacto-medioambiental-de-los-espaoles', 'https://images.squarespace-cdn.com/content/v1/622f84208feb0027729013ad/929a2570-105e-43cf-b0d3-99ecd4c5031f/grafico_sectores.jpg?format=2500w', 'Bárbara González', '12e8a3e3-193d-4a93-8e9d-10d56a074947', 'ES', '2024-04-09 10:25:47', '2024-04-09 10:25:47'),
-('560b08d9-12d0-46ed-b507-5e1647a73475', 'Entrevista a Irene Montero', 'La invitada 142 del Podcast es la política y ex Ministra de Igualdad Irene Montero. En esta entrevista tenemos una política que no deja indiferente a nadie, llegó con el anterior gobierno de España a ser Ministra de igualdad. Primera vez que hay un ministerio de igualdad y un gobierno de coalición, nos contará cómo lo ha vivido desde dentro. Le montaron otro partido acercándose las elecciones, el partido “Sumar” liderado por Yolanda Díaz, cómo lo vivió? Cuál es su relación con ella? Además, pusieron como requisito para las elecciones donde iban Sumar y Podemos, que ella, Irene Montero, no estuviera en las listas. ¿Cuál fue el motivo y quien lo decidió así? Una entrevista donde conocer el lado mas personal de Irene, pero también donde le preguntaremos por temas polémicos y leyes polémicas como la del “sólo el Si es Si” o la “ley trans”.', 'youtube', 'https://i.ytimg.com/vi/tgOxJKKarV8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLD5J3sjlwXs6sSs4niOHWYaZUrGJw', 'https://www.youtube.com/watch?v=tgOxJKKarV8', 'Ibai Vegan', 'f1506ee9-7002-41ec-85a3-d78dab6ab2e9', 'ES', '2024-04-09 10:26:50', '2024-04-09 10:26:50'),
+('560b08d9-12d0-46ed-b507-5e1647a73475', 'Entrevista a Irene Montero', 'La invitada 142 del Podcast es la política y ex Ministra de Igualdad Irene Montero. En esta entrevista tenemos una política que no deja indiferente a nadie, llegó con el anterior gobierno de España a ser Ministra de igualdad. Primera vez que hay un ministerio de igualdad y un gobierno de coalición, nos contará cómo lo ha vivido desde dentro. Le montaron otro partido acercándose las elecciones, el partido “Sumar” liderado por Yolanda Díaz, cómo lo vivió? Cuál es su relación con ella? Además, pusieron como requisito para las elecciones donde iban Sumar y Podemos, que ella, Irene Montero, no estuviera en las listas. ¿Cuál fue el motivo y quien lo decidió así? Una entrevista donde conocer el lado mas personal de Irene, pero también donde le preguntaremos por temas polémicos y leyes polémicas como la del “sólo el Si es Si” o la “ley trans”.', 'youtube', 'https://www.youtube.com/embed/tgOxJKKarV8?si=i9Knm8kfTolDo-CX', 'https://i.ytimg.com/vi/tgOxJKKarV8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLD5J3sjlwXs6sSs4niOHWYaZUrGJw', 'Ibai Vegan', 'f1506ee9-7002-41ec-85a3-d78dab6ab2e9', 'ES', '2024-04-09 10:26:50', '2024-04-09 10:26:50'),
 ('752f65f8-3c76-47ad-a34b-b8636a38b96f', 'Mascletá en Madrid', 'Ningún ser inteligente destrozaría el planeta donde vive. No solo no nos ponemos a protegerlo sino que cada día destrozamos más y más y más la naturaleza y a todos sus habitantes. Vergüenza de toda la gente que lleva banderitas pero está destruyendo su tierra; patriota es quien defiende su tierra, quien destruye su tierra es antipatriota', 'instagram', 'https://www.tiktok.com/@xavi.animal/video/7337017354112568581', 'https://www.instagram.com/reel/C3fWFBQtlS6/?igsh=MWJpZzh3eW5wdWxyZA==', 'Xavi Animal', '5f12cf40-8d27-4f48-b947-b07ce52880a9', 'ES', '2024-04-09 10:26:16', '2024-04-09 10:26:16'),
-('a62deeb5-0ad0-4c8c-96b3-4ceba2917950', 'Nunca verás tu vida de la misma manera - Discurso que te abrirá los ojos', 'Mira el discurso que fue dado a miles de estudiantes en universidades del Reino Unido.', 'youtube', 'https://i.ytimg.com/vi/Z3u7hXpOm58/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLAbfO7-oOFBlohJBXjCbvrIX6lKaw', 'https://www.youtube.com/watch?v=Z3u7hXpOm58', 'Earthling Ed', 'bfb6735a-dbb8-49d6-b0fd-1fe0e613c6dd', 'EN', '2024-04-09 10:27:06', '2024-04-09 10:27:06'),
-('abf68b19-5488-4119-bd48-fe661b72f2cc', 'Albóndigas Veganas en Salsa', 'Tiempo de preparación: 40 mins, Tiempo de cocina: 45 mins, INGREDIENTES PARA LAS ALBÓNDIGAS: 185 gr Copos de avena finos, 80 gr Proteína de guisante, 600 gr Caldo vegetal, 50 gr Salsa de soja, 1 Cucharada de lino molido, 2 rebanadas de pan de molde untadas den leche vegetal sin azúcares (45 gr de leche), 1/2 Cebolla, 2 Dientes de ajo sin el nervio, 1 Manojo de perejil fresco muy picadito, 80 gr Harina de garbanzo, 65 gr Pan rallado, Sal, Harina de arroz (para rebozarlas), INGREDIENTES PARA LA SALSA: 4 Cebollas, 2 Zanahorias, 3 Dientes de ajo, 2 Puerros, 2 Cucharadas de harina, 1 Litro de Caldo vegetal, 1/2 Taza de salsa de tomate, Pimienta, Sal', 'youtube', 'https://peacelovevegan.es/recetas/albondigas-veganas-en-salsa/', 'https://www.youtube.com/watch?v=BdD_-u7grQw', 'Izaskun Unibaso', '58491205-7c12-4b61-81cb-d4cfac79483b', 'ES', '2024-04-09 10:26:00', '2024-04-09 10:26:00'),
-('cea29889-bc1c-471e-904f-aaf7b684e963', 'Seaspiracy', 'Un director apasionado de los océanos decide realizar un documental en el que se demuestre el daño que el ser humano causa a las especies marinas, desvelando en el proceso una alarmante corrupción mundial.', 'película', 'https://www.netflix.com/cl/title/81014008', 'https://www.youtube.com/watch?v=t6eT33o66dA', 'Seaspiracy', 'fcc90903-7da7-431c-bdf6-8cb22e035d8d', 'ES', '2024-04-09 10:26:33', '2024-04-09 10:26:33'),
+('a62deeb5-0ad0-4c8c-96b3-4ceba2917950', 'Nunca verás tu vida de la misma manera - Discurso que te abrirá los ojos', 'Mira el discurso que fue dado a miles de estudiantes en universidades del Reino Unido.', 'youtube', 'https://www.youtube.com/embed/Z3u7hXpOm58?si=3oMl-MPg65FE5Wyl', 'https://i.ytimg.com/vi/Z3u7hXpOm58/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLAbfO7-oOFBlohJBXjCbvrIX6lKaw', 'Earthling Ed', 'bfb6735a-dbb8-49d6-b0fd-1fe0e613c6dd', 'EN', '2024-04-09 10:27:06', '2024-04-09 10:27:06'),
+('abf68b19-5488-4119-bd48-fe661b72f2cc', 'Albóndigas Veganas en Salsa', 'Tiempo de preparación: 40 mins,\r\nTiempo de cocina: 45 mins,\r\nINGREDIENTES PARA LAS ALBÓNDIGAS:\r\n185 gr Copos de avena finos,\r\n80 gr Proteína de guisante,\r\n600 gr Caldo vegetal,\r\n50 gr Salsa de soja,\r\n1 Cucharada de lino molido,\r\n2 rebanadas de pan de molde untadas den leche vegetal sin azúcares (45 gr de leche),\r\n1/2 Cebolla,\r\n2 Dientes de ajo sin el nervio,\r\n1 Manojo de perejil fresco muy picadito,\r\n80 gr Harina de garbanzo,\r\n65 gr Pan rallado,\r\nSal,\r\nHarina de arroz (para rebozarlas),\r\nINGREDIENTES PARA LA SALSA:\r\n4 Cebollas,\r\n2 Zanahorias,\r\n3 Dientes de ajo,\r\n2 Puerros,\r\n2 Cucharadas de harina,\r\n1 Litro de Caldo vegetal,\r\n1/2 Taza de salsa de tomate,\r\nPimienta,\r\nSal\r\n\r\n\r\nhttps://peacelovevegan.es/recetas/albondigas-veganas-en-salsa/', 'youtube', 'https://www.youtube.com/embed/BdD_-u7grQw?si=lSa-eOZVdxYTs001', 'https://i.ytimg.com/vi/BdD_-u7grQw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLB4RCtrqig0nudITComkvmNWz9uJQ', 'Izaskun Unibaso', '58491205-7c12-4b61-81cb-d4cfac79483b', 'ES', '2024-04-09 10:26:00', '2024-04-09 10:26:00'),
+('cea29889-bc1c-471e-904f-aaf7b684e963', 'Seaspiracy', 'Un director apasionado de los océanos decide realizar un documental en el que se demuestre el daño que el ser humano causa a las especies marinas, desvelando en el proceso una alarmante corrupción mundial.', 'película', 'https://www.netflix.com/cl/title/81014008', 'https://www.youtube.com/embed/t6eT33o66dA?si=Lwoo9VBxKgLiezNS', 'Seaspiracy', 'fcc90903-7da7-431c-bdf6-8cb22e035d8d', 'ES', '2024-04-09 10:26:33', '2024-04-09 10:26:33'),
 ('e1c19025-38c0-4d5a-b6a7-852b48c2f5ad', 'Mi dieta cojea: Los mitos sobre nutrición que te han hecho creer', 'Quién no ha oído, y repetido, muchas veces frases como «La grasa engorda», «Para adelgazar debemos tomar menos calorías», «Desayunar es obligatorio para llevar una dieta saludable» o «Los huevos suben el colesterol». En Mi dieta cojea, Aitor Sánchez desmonta muchos de los mitos relacionados con la alimentación y nos explica qué verdades y mentiras se esconden detrás de muchas creencias que suelen provenir de la falta de información rigurosa, la manipulación de los mensajes publicitarios por parte de la industria alimentaria e incluso de los dogmas sociales. El principal objetivo es que el lector pueda desarrollar una conciencia crítica y profundizar en el aprendizaje de los principales conceptos de lo que debe ser una alimentación saludable.', 'libro', 'https://www.goodreads.com/es/book/show/32176802', 'https://m.media-amazon.com/images/I/91jlW4R+pfL._AC_UF1000,1000_QL80_.jpg', 'Aitor Sánchez', '55b29068-3e97-4d0f-b1d4-4006c31c2819', 'ES', '2024-04-09 10:25:01', '2024-04-09 10:25:01');
 
 -- --------------------------------------------------------
@@ -244,11 +244,11 @@ INSERT INTO `posts` (`id`, `title`, `body`, `type`, `url`, `image`, `author`, `a
 --
 
 CREATE TABLE `post_theme` (
-  `post_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `theme_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `post_id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `theme_id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `post_theme`
@@ -297,11 +297,11 @@ INSERT INTO `post_theme` (`post_id`, `theme_id`, `created_at`, `updated_at`) VAL
 --
 
 CREATE TABLE `themes` (
-  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `themes`
@@ -329,14 +329,19 @@ INSERT INTO `themes` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'adminTGdA', '$2y$12$AIiLR9qZQNG/KvqAZskTcO3gcoWZuIyC6wjofR8OEGxVP8T.o9ZVK', NULL, '2024-05-21 10:12:25', '2024-05-21 10:12:25');
 
 --
 -- Indexes for dumped tables
@@ -410,7 +415,7 @@ ALTER TABLE `themes`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_username_unique` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -426,7 +431,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -438,7 +443,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
