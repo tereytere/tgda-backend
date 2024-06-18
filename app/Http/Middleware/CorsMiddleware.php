@@ -22,8 +22,9 @@ class CorsMiddleware
         $response->headers->set('Access-Control-Allow-Credentials', 'true');
 
         // Add headers to allow cross-origin requests
+        $response->headers->set('Access-Control-Allow-Origin', '*');
         $origin = $request->headers->get('Origin');
-        $allowedOrigins = ['http://localhost:3000']; // Add your frontend origin
+        $allowedOrigins = ['http://localhost:3001'];
 
         if (in_array($origin, $allowedOrigins)) {
             $response->headers->set('Access-Control-Allow-Origin', $origin);
