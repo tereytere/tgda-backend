@@ -1,148 +1,186 @@
 [
-  {
-    "type": "header",
-    "version": "5.2.1",
-    "comment": "Export to JSON plugin for PHPMyAdmin"
-  },
-  {
-    "type": "database",
-    "name": "TGdA"
-  },
-  {
-    "type": "table",
-    "name": "posts",
-    "database": "TGdA",
-    "data": [
-      {
-        "title": "Mi dieta cojea: Los mitos sobre nutrición que te han hecho creer",
-        "body": "Quién no ha oído, y repetido, muchas veces frases como «La grasa engorda», «Para adelgazar debemos tomar menos calorías», «Desayunar es obligatorio para llevar una dieta saludable» o «Los huevos suben el colesterol». En Mi dieta cojea, Aitor Sánchez desmonta muchos de los mitos relacionados con la alimentación y nos explica qué verdades y mentiras se esconden detrás de muchas creencias que suelen provenir de la falta de información rigurosa, la manipulación de los mensajes publicitarios por parte de la industria alimentaria e incluso de los dogmas sociales. El principal objetivo es que el lector pueda desarrollar una conciencia crítica y profundizar en el aprendizaje de los principales conceptos de lo que debe ser una alimentación saludable.",
-        "type": "libro",
-        "url": "https://www.goodreads.com/es/book/show/32176802",
-        "image": "https://m.media-amazon.com/images/I/91jlW4R+pfL._AC_UF1000,1000_QL80_.jpg",
-        "themes": [
-          "veganismo",
-          "alimentación",
-          "sostenibilidad",
-          "investigación",
-          "salud"
-        ],
-        "author": "Aitor Sánchez",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Bruno León (Activista Trans) | Transexualidad, veganismo y más",
-        "body": "Hoy tenemos a Bruno León con quién aprenderemos y escucharemos la historia de una persona trans",
-        "type": "podcast",
-        "url": "https://open.spotify.com/episode/10dOWUhvVWTwS5ynojjAqt?si=sdYlLMjETzW98VAbOCfEbA",
-        "image": "https://i.scdn.co/image/ab6765630000ba8ab76ffafb73ee09b9227a1ce9",
-        "themes": [
-          "veganismo",
-          "activismo",
-          "salud"
-        ],
-        "author": "Ibai Vegan",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Las 5 acciones que más reducirían el impacto medioambiental de los españoles",
-        "body": "A veces parece que vivimos en el día de la marmota. No hace ni 3 meses que estaba escribiendo sobre cómo evitar olas de calor a corto plazo. Más de 500 muertes. Más de 30 incendios. Así llevamos la ola de calor de julio. ¿Desolador? Sin duda. Pero en medio de todas las emociones sigue la acción y la ciencia. Varios estudios muestran que estas situaciones extremas son el punto de inflexión que mucha gente necesita para empezar a actuar. Para todas esas personas escribo este artículo. Una recopilación de las acciones más importantes. ¿Y cómo sé que son las más importantes? Porque me voy a basar en los datos. Concretamente la referencia de este artículo es el Informe de Sostenibilidad de Consumo de España (2022). Cómo por ahora ningún gobierno me ha pedido un informe de las medidas efectivas, lo que te voy a proponer son las acciones que podemos poner en práctica la gente corriente.",
-        "type": "webpage",
-        "url": "https://www.barbarapgs.com/blog/las-5-acciones-que-ms-reduciran-el-impacto-medioambiental-de-los-espaoles",
-        "image": "https://images.squarespace-cdn.com/content/v1/622f84208feb0027729013ad/929a2570-105e-43cf-b0d3-99ecd4c5031f/grafico_sectores.jpg?format=2500w",
-        "themes": [
-          "veganismo",
-          "activismo",
-          "investigación",
-          "medioambiente",
-          "sostenibilidad"
-        ],
-        "author": "Bárbara González",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Albóndigas Veganas en Salsa",
-        "body": "Tiempo de preparación: 40 mins, Tiempo de cocina: 45 mins, INGREDIENTES PARA LAS ALBÓNDIGAS: 185 gr Copos de avena finos, 80 gr Proteína de guisante, 600 gr Caldo vegetal, 50 gr Salsa de soja, 1 Cucharada de lino molido, 2 rebanadas de pan de molde untadas den leche vegetal sin azúcares (45 gr de leche), 1/2 Cebolla, 2 Dientes de ajo sin el nervio, 1 Manojo de perejil fresco muy picadito, 80 gr Harina de garbanzo, 65 gr Pan rallado, Sal, Harina de arroz (para rebozarlas), INGREDIENTES PARA LA SALSA: 4 Cebollas, 2 Zanahorias, 3 Dientes de ajo, 2 Puerros, 2 Cucharadas de harina, 1 Litro de Caldo vegetal, 1/2 Taza de salsa de tomate, Pimienta, Sal",
-        "type": "youtube",
-        "url": "https://peacelovevegan.es/recetas/albondigas-veganas-en-salsa/",
-        "image": "https://www.youtube.com/watch?v=BdD_-u7grQw",
-        "themes": [
-          "veganismo",
-          "alimentación"
-        ],
-        "author": "Izaskun Unibaso",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Mascletá en Madrid",
-        "body": "Ningún ser inteligente destrozaría el planeta donde vive. No solo no nos ponemos a protegerlo sino que cada día destrozamos más y más y más la naturaleza y a todos sus habitantes. Vergüenza de toda la gente que lleva banderitas pero está destruyendo su tierra; patriota es quien defiende su tierra, quien destruye su tierra es antipatriota",
-        "type": "instagram",
-        "url": "https://www.tiktok.com/@xavi.animal/video/7337017354112568581",
-        "image": "https://www.instagram.com/reel/C3fWFBQtlS6/?igsh=MWJpZzh3eW5wdWxyZA==",
-        "themes": [
-          "veganismo",
-          "animales",
-          "activismo",
-          "medioambiente"
-        ],
-        "author": "Xavi Animal",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Seaspiracy",
-        "body": "Un director apasionado de los océanos decide realizar un documental en el que se demuestre el daño que el ser humano causa a las especies marinas, desvelando en el proceso una alarmante corrupción mundial.",
-        "type": "película",
-        "url": "https://www.netflix.com/cl/title/81014008",
-        "image": "https://www.youtube.com/watch?v=t6eT33o66dA",
-        "themes": [
-          "veganismo",
-          "animales",
-          "activismo",
-          "medioambiente",
-          "sostenibilidad",
-          "salud"
-        ],
-        "author": "Seaspiracy",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Entrevista a Irene Montero",
-        "body": "La invitada 142 del Podcast es la política y ex Ministra de Igualdad Irene Montero. En esta entrevista tenemos una política que no deja indiferente a nadie, llegó con el anterior gobierno de España a ser Ministra de igualdad. Primera vez que hay un ministerio de igualdad y un gobierno de coalición, nos contará cómo lo ha vivido desde dentro. Le montaron otro partido acercándose las elecciones, el partido “Sumar” liderado por Yolanda Díaz, cómo lo vivió? Cuál es su relación con ella? Además, pusieron como requisito para las elecciones donde iban Sumar y Podemos, que ella, Irene Montero, no estuviera en las listas. ¿Cuál fue el motivo y quien lo decidió así? Una entrevista donde conocer el lado mas personal de Irene, pero también donde le preguntaremos por temas polémicos y leyes polémicas como la del “sólo el Si es Si” o la “ley trans”.",
-        "type": "youtube",
-        "url": "https://i.ytimg.com/vi/tgOxJKKarV8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLD5J3sjlwXs6sSs4niOHWYaZUrGJw",
-        "image": "https://www.youtube.com/watch?v=tgOxJKKarV8",
-        "themes": [
-          "veganismo",
-          "activismo",
-          "medioambiente"
-        ],
-        "author": "Ibai Vegan",
-        "author_id": "null",
-        "language": "ES"
-      },
-      {
-        "title": "Nunca verás tu vida de la misma manera - Discurso que te abrirá los ojos",
-        "body": "Mira el discurso que fue dado a miles de estudiantes en universidades del Reino Unido.",
-        "type": "youtube",
-        "url": "https://i.ytimg.com/vi/Z3u7hXpOm58/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLAbfO7-oOFBlohJBXjCbvrIX6lKaw",
-        "image": "https://www.youtube.com/watch?v=Z3u7hXpOm58",
-        "themes": [
-          "veganismo",
-          "activismo",
-          "medioambiente",
-          "salud",
-          "alimentación",
-          "investigación"
-        ],
-        "author": "Earthling Ed",
-        "author_id": "null",
-        "language": "EN"
-      }
-    ]
-  }
+    {
+        "type": "header",
+        "version": "5.2.1",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "TGdA"
+    },
+    {
+        "type": "table",
+        "name": "posts",
+        "database": "TGdA",
+        "data": [
+            {
+                "title": "Mi dieta cojea: Los mitos sobre nutrición que te han hecho creer",
+                "body": "Quién no ha oído, y repetido, muchas veces frases como «La grasa engorda», «Para adelgazar debemos tomar menos calorías», «Desayunar es obligatorio para llevar una dieta saludable» o «Los huevos suben el colesterol». En Mi dieta cojea, Aitor Sánchez desmonta muchos de los mitos relacionados con la alimentación y nos explica qué verdades y mentiras se esconden detrás de muchas creencias que suelen provenir de la falta de información rigurosa, la manipulación de los mensajes publicitarios por parte de la industria alimentaria e incluso de los dogmas sociales. El principal objetivo es que el lector pueda desarrollar una conciencia crítica y profundizar en el aprendizaje de los principales conceptos de lo que debe ser una alimentación saludable.",
+                "type": "libro",
+                "url": "https://www.goodreads.com/es/book/show/32176802",
+                "image": "https://m.media-amazon.com/images/I/91jlW4R+pfL._AC_UF1000,1000_QL80_.jpg",
+                "themes": [
+                    "veganismo",
+                    "alimentación",
+                    "sostenibilidad",
+                    "investigación",
+                    "salud"
+                ],
+                "author": "Aitor Sánchez",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Bruno León (Activista Trans) | Transexualidad, veganismo y más",
+                "body": "Hoy tenemos a Bruno León con quién aprenderemos y escucharemos la historia de una persona trans",
+                "type": "podcast",
+                "url": "https://open.spotify.com/episode/10dOWUhvVWTwS5ynojjAqt?si=sdYlLMjETzW98VAbOCfEbA",
+                "image": "https://i.scdn.co/image/ab6765630000ba8ab76ffafb73ee09b9227a1ce9",
+                "themes": ["veganismo", "activismo", "salud"],
+                "author": "Ibai Vegan",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Las 5 acciones que más reducirían el impacto medioambiental de los españoles",
+                "body": "A veces parece que vivimos en el día de la marmota. No hace ni 3 meses que estaba escribiendo sobre cómo evitar olas de calor a corto plazo. Más de 500 muertes. Más de 30 incendios. Así llevamos la ola de calor de julio. ¿Desolador? Sin duda. Pero en medio de todas las emociones sigue la acción y la ciencia. Varios estudios muestran que estas situaciones extremas son el punto de inflexión que mucha gente necesita para empezar a actuar. Para todas esas personas escribo este artículo. Una recopilación de las acciones más importantes. ¿Y cómo sé que son las más importantes? Porque me voy a basar en los datos. Concretamente la referencia de este artículo es el Informe de Sostenibilidad de Consumo de España (2022). Cómo por ahora ningún gobierno me ha pedido un informe de las medidas efectivas, lo que te voy a proponer son las acciones que podemos poner en práctica la gente corriente.",
+                "type": "webpage",
+                "url": "https://www.barbarapgs.com/blog/las-5-acciones-que-ms-reduciran-el-impacto-medioambiental-de-los-espaoles",
+                "image": "https://images.squarespace-cdn.com/content/v1/622f84208feb0027729013ad/929a2570-105e-43cf-b0d3-99ecd4c5031f/grafico_sectores.jpg?format=2500w",
+                "themes": [
+                    "veganismo",
+                    "activismo",
+                    "investigación",
+                    "medioambiente",
+                    "sostenibilidad"
+                ],
+                "author": "Bárbara González",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Albóndigas Veganas en Salsa",
+                "body": "Tiempo de preparación: 40 mins, Tiempo de cocina: 45 mins, INGREDIENTES PARA LAS ALBÓNDIGAS: 185 gr Copos de avena finos, 80 gr Proteína de guisante, 600 gr Caldo vegetal, 50 gr Salsa de soja, 1 Cucharada de lino molido, 2 rebanadas de pan de molde untadas den leche vegetal sin azúcares (45 gr de leche), 1/2 Cebolla, 2 Dientes de ajo sin el nervio, 1 Manojo de perejil fresco muy picadito, 80 gr Harina de garbanzo, 65 gr Pan rallado, Sal, Harina de arroz (para rebozarlas), INGREDIENTES PARA LA SALSA: 4 Cebollas, 2 Zanahorias, 3 Dientes de ajo, 2 Puerros, 2 Cucharadas de harina, 1 Litro de Caldo vegetal, 1/2 Taza de salsa de tomate, Pimienta, Sal",
+                "type": "youtube",
+                "url": "https://peacelovevegan.es/recetas/albondigas-veganas-en-salsa/",
+                "image": "https://www.youtube.com/watch?v=BdD_-u7grQw",
+                "themes": ["veganismo", "alimentación"],
+                "author": "Izaskun Unibaso",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Mascletá en Madrid",
+                "body": "Ningún ser inteligente destrozaría el planeta donde vive. No solo no nos ponemos a protegerlo sino que cada día destrozamos más y más y más la naturaleza y a todos sus habitantes. Vergüenza de toda la gente que lleva banderitas pero está destruyendo su tierra; patriota es quien defiende su tierra, quien destruye su tierra es antipatriota",
+                "type": "instagram",
+                "url": "https://www.tiktok.com/@xavi.animal/video/7337017354112568581",
+                "image": "https://www.instagram.com/reel/C3fWFBQtlS6/?igsh=MWJpZzh3eW5wdWxyZA==",
+                "themes": [
+                    "veganismo",
+                    "animales",
+                    "activismo",
+                    "medioambiente"
+                ],
+                "author": "Xavi Animal",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Seaspiracy",
+                "body": "Un director apasionado de los océanos decide realizar un documental en el que se demuestre el daño que el ser humano causa a las especies marinas, desvelando en el proceso una alarmante corrupción mundial.",
+                "type": "película",
+                "url": "https://www.netflix.com/cl/title/81014008",
+                "image": "https://www.youtube.com/watch?v=t6eT33o66dA",
+                "themes": [
+                    "veganismo",
+                    "animales",
+                    "activismo",
+                    "medioambiente",
+                    "sostenibilidad",
+                    "salud"
+                ],
+                "author": "Seaspiracy",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Entrevista a Irene Montero",
+                "body": "La invitada 142 del Podcast es la política y ex Ministra de Igualdad Irene Montero. En esta entrevista tenemos una política que no deja indiferente a nadie, llegó con el anterior gobierno de España a ser Ministra de igualdad. Primera vez que hay un ministerio de igualdad y un gobierno de coalición, nos contará cómo lo ha vivido desde dentro. Le montaron otro partido acercándose las elecciones, el partido “Sumar” liderado por Yolanda Díaz, cómo lo vivió? Cuál es su relación con ella? Además, pusieron como requisito para las elecciones donde iban Sumar y Podemos, que ella, Irene Montero, no estuviera en las listas. ¿Cuál fue el motivo y quien lo decidió así? Una entrevista donde conocer el lado mas personal de Irene, pero también donde le preguntaremos por temas polémicos y leyes polémicas como la del “sólo el Si es Si” o la “ley trans”.",
+                "type": "youtube",
+                "url": "https://i.ytimg.com/vi/tgOxJKKarV8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLD5J3sjlwXs6sSs4niOHWYaZUrGJw",
+                "image": "https://www.youtube.com/watch?v=tgOxJKKarV8",
+                "themes": ["veganismo", "activismo", "medioambiente"],
+                "author": "Ibai Vegan",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Nunca verás tu vida de la misma manera - Discurso que te abrirá los ojos",
+                "body": "Mira el discurso que fue dado a miles de estudiantes en universidades del Reino Unido.",
+                "type": "youtube",
+                "url": "https://i.ytimg.com/vi/Z3u7hXpOm58/hqdefault.jpg?s…AFwAcABBg==&rs=AOn4CLAbfO7-oOFBlohJBXjCbvrIX6lKaw",
+                "image": "https://www.youtube.com/watch?v=Z3u7hXpOm58",
+                "themes": [
+                    "veganismo",
+                    "activismo",
+                    "medioambiente",
+                    "salud",
+                    "alimentación",
+                    "investigación"
+                ],
+                "author": "Earthling Ed",
+                "author_id": "null",
+                "language": "EN"
+            },
+            {
+                "title": "La Biblia de la cocina vegana: Descubre todo sobre la cocina Plant Based",
+                "body": "La importancia de reducir el consumo de productos de origen animal es sabida por todo el mundo ya que estamos sobreexplotando el planeta. Aquí vas a encontrar las herramientas necesarias para poder reducir este consumo a favor de cuidar tanto a los animales como al medioambiente. En este libro vas a disfrutar de mis mejores recetas, las cuales se han ido construyendo a lo largo de los años y después de someterlas a mucha prueba-error. Las recetas que vas a poder poner en práctica destacan porque sus ingredientes están al alcance de la mayoría de las personas y porque están cuidadas al detalle para que siempre salgan bien. Y lo más importante de todo, vas a descubrir que la comida 100 % vegetal es sencillamente divertida y sabrosa.",
+                "type": "libro",
+                "url": "https://www.goodreads.com/book/show/63226272-la-biblia-de-la-cocina-vegana",
+                "image": "https://m.media-amazon.com/images/I/61tydok-2vL._SY385_.jpg",
+                "themes": [
+                    "veganismo",
+                    "alimentación",
+                    "sostenibilidad",
+                    "salud"
+                ],
+                "author": "Gloria Carrión",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Impacto ecológico de la ganadería con Youth Climate Save",
+                "body": "Nos acompaña hoy Emi de Youth Climate Save para hablar sobre el impacto climático de la ganaderia con una exposición muy interesante.",
+                "type": "podcast",
+                "url": "https://open.spotify.com/embed/episode/26pJL0JeuvyeXzdBoSZ0Xr/video?utm_source=generator",
+                "image": "https://i.scdn.co/image/ab67656300005f1f99f43843ab86b9e093cb5317",
+                "themes": [
+                    "veganismo",
+                    "activismo",
+                    "sostenibilidad",
+                    "medioambiente"
+                ],
+                "author": "Miriam Jiménez",
+                "author_id": "null",
+                "language": "ES"
+            },
+            {
+                "title": "Zero Waste para salvar el mundo",
+                "body": "El planeta está al límite. Nos hallamos cerca de lo que los científicos llaman el «punto de no retorno». Es necesario que tomemos conciencia de ello y nos pongamos en acción para salvarlo. El movimiento Zero Waste promueve un estilo de vida más sostenible para reducir nuestro impacto medioambiental y generar los mínimos residuos posibles. Y Zero Waste para salvar el mundo es la primera guía ilustrada que ofrece trucos y consejos sencillos para poner en práctica en todos los ámbitos del día a día: cómo reciclar los residuos, cómo hacer la compra de una manera más sostenible, qué objetos debemos eliminar de nuestra rutina, cuál es el kit básico para tener una cocina más respetuosa con el medio ambiente.",
+                "type": "libro",
+                "url": "https://www.goodreads.com/book/show/52857961-zero-waste-para-salvar-el-mundo?from_search=true&from_srp=true&qid=k35DNSVchf&rank=2",
+                "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1567672469l/52857961.jpg",
+                "themes": [
+                    "veganismo",
+                    "medioambiente",
+                    "sostenibilidad",
+                    "belleza",
+                    "moda"
+                ],
+                "author": "Ally Vispo",
+                "author_id": "null",
+                "language": "ES"
+            }
+        ]
+    }
 ]
