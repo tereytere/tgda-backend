@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -16,25 +16,21 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            Session::flash('success', 'You are logged in successfully!');
-
-            return redirect()->intended('/');
+            /** @var \App\Models\User $user */
+            $user = Auth::user();
+            $token = $user->createToken('API Token')->plainTextToken;
+            return response()->json(['token' => $token], 200);
         }
 
-        return back()->withErrors([
-            'username' => 'The provided credentials do not match our records.',
-        ]);
+        return response()->json(['error' => 'The provided credentials do not match our records.'], 401);
     }
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        /** @var \App\Models\User $user */
+        $user = $request->user();
+        $user->tokens()->delete();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        Session::flash('success', 'You have been logged out successfully.');
-
-        return redirect('/');
+        return response()->json(['message' => 'Logged out successfully'], 200);
     }
 }
