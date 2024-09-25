@@ -1,7 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\CookieController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +19,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Users
-Route::post('/login', 'AuthController@login');
-Route::post('/logout', 'AuthController@logout');
-Route::post('/info', 'AuthController@infodata');
+// Authentication Routes
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
+
+// Public Routes (No Authentication Required)
+Route::get('/posts', [PostController::class, 'list']);
+Route::get('/posts/{post}', [PostController::class, 'getRelatedData']);
+Route::get('/posts/{post}/authors', [PostController::class, 'getRelatedAuthors']);
+Route::get('/posts/{post}/themes', [PostController::class, 'getRelatedThemes']);
+Route::get('/authors', [AuthorController::class, 'list']);
+Route::get('/authors/{author}', [AuthorController::class, 'getRelatedData']);
+Route::get('/authors/{author}/posts', [AuthorController::class, 'getRelatedPosts']);
+Route::get('/authors/{author}/themes', [AuthorController::class, 'getRelatedThemes']);
+Route::get('/themes', [ThemeController::class, 'list']);
+Route::get('/themes/{theme}', [ThemeController::class, 'getRelatedData']);
+Route::get('/themes/{theme}/posts', [ThemeController::class, 'getRelatedPosts']);
+Route::get('/themes/{theme}/authors', [ThemeController::class, 'getRelatedAuthors']);
+
+// Protected Routes Group (Requires Authentication)
+Route::middleware(['auth:sanctum'])->group(function () {
+    // Posts
+    Route::get('/post', [PostController::class, 'create']);
+    Route::post('/post', [PostController::class, 'store']);
+    Route::put('/posts/{post}', [PostController::class, 'update']);
+    Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+
+    // Authors
+    Route::get('/author', [AuthorController::class, 'create']);
+    Route::post('/author', [AuthorController::class, 'store']);
+    Route::put('/authors/{author}', [AuthorController::class, 'update']);
+    Route::delete('/authors/{author}', [AuthorController::class, 'destroy']);
+
+    // Themes
+    Route::get('/theme', [ThemeController::class, 'create']);
+    Route::post('/theme', [ThemeController::class, 'store']);
+    Route::put('/themes/{theme}', [ThemeController::class, 'update']);
+    Route::delete('/themes/{theme}', [ThemeController::class, 'destroy']);
+});
+
+// Cookies
+Route::post('/set-cookie', [CookieController::class, 'setCookie']);
 
 // Search
 Route::get('/search', 'App\Http\Controllers\SearchController@search');
