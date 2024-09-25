@@ -1,8 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,21 +18,84 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+// Authentication Routes
+Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout');
+
+
+// Public Routes (No Authentication Required)
+Route::get('/posts', [PostController::class, 'list']);
+Route::get('/posts/{post}', [PostController::class, 'getRelatedData']);
+Route::get('/posts/{post}/authors', [PostController::class, 'getRelatedAuthors']);
+Route::get('/posts/{post}/themes', [PostController::class, 'getRelatedThemes']);
+Route::get('/authors', [AuthorController::class, 'list']);
+Route::get('/authors/{author}', [AuthorController::class, 'getRelatedData']);
+Route::get('/authors/{author}/posts', [AuthorController::class, 'getRelatedPosts']);
+Route::get('/authors/{author}/themes', [AuthorController::class, 'getRelatedThemes']);
+Route::get('/themes', [ThemeController::class, 'list']);
+Route::get('/themes/{theme}', [ThemeController::class, 'getRelatedData']);
+Route::get('/themes/{theme}/posts', [ThemeController::class, 'getRelatedPosts']);
+Route::get('/themes/{theme}/authors', [ThemeController::class, 'getRelatedAuthors']);
+
+// Protected Routes Group (Requires Authentication)
+Route::middleware(['auth:sanctum'])->group(function () {
+    // Posts
+    Route::get('/post', [PostController::class, 'create']);
+    Route::post('/post', [PostController::class, 'store']);
+    Route::put('/posts/{post}', [PostController::class, 'update']);
+    Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+
+    // Authors
+    Route::get('/author', [AuthorController::class, 'create']);
+    Route::post('/author', [AuthorController::class, 'store']);
+    Route::put('/authors/{author}', [AuthorController::class, 'update']);
+    Route::delete('/authors/{author}', [AuthorController::class, 'destroy']);
+
+    // Themes
+    Route::get('/theme', [ThemeController::class, 'create']);
+    Route::post('/theme', [ThemeController::class, 'store']);
+    Route::put('/themes/{theme}', [ThemeController::class, 'update']);
+    Route::delete('/themes/{theme}', [ThemeController::class, 'destroy']);
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
+// Search
+Route::get('/search', 'App\Http\Controllers\SearchController@search');
+
+// Posts
+Route::get('/posts', 'App\Http\Controllers\PostController@list');
+
+Route::get('/post', 'App\Http\Controllers\PostController@create');
+Route::middleware('auth')->post('/post', 'App\Http\Controllers\PostController@store');
+
+Route::put('/posts/{post}', 'App\Http\Controllers\PostController@update');
+Route::get('/posts/{post}', 'App\Http\Controllers\PostController@getRelatedData');
+Route::get('/posts/{post}/authors', 'App\Http\Controllers\PostController@getRelatedAuthors');
+Route::get('/posts/{post}/themes', 'App\Http\Controllers\PostController@getRelatedThemes');
+
+Route::delete('/posts/{post}', 'App\Http\Controllers\PostController@destroy');
+
+// Authors
+Route::get('/authors', 'App\Http\Controllers\AuthorController@list');
+
+Route::get('/author', 'App\Http\Controllers\AuthorController@create');
+Route::post('/author', 'App\Http\Controllers\AuthorController@store');
+
+Route::put('/authors/{author}', 'App\Http\Controllers\AuthorController@update');
+Route::get('/authors/{author}', 'App\Http\Controllers\AuthorController@getRelatedData');
+Route::get('/authors/{author}/posts', 'App\Http\Controllers\AuthorController@getRelatedPosts');
+Route::get('/authors/{author}/themes', 'App\Http\Controllers\AuthorController@getRelatedThemes');
+
+Route::delete('/authors/{author}', 'App\Http\Controllers\AuthorController@destroy');
+
+// Themes
+Route::get('/themes', 'App\Http\Controllers\ThemeController@list');
+
+Route::get('/theme', 'App\Http\Controllers\ThemeController@create');
+Route::post('/theme', 'App\Http\Controllers\ThemeController@store');
+
+Route::put('/themes/{theme}', 'App\Http\Controllers\ThemeController@update');
+Route::get('/themes/{theme}', 'App\Http\Controllers\ThemeController@getRelatedData');
+Route::get('/themes/{theme}/posts', 'App\Http\Controllers\ThemeController@getRelatedPosts');
+Route::get('/themes/{theme}/authors', 'App\Http\Controllers\ThemeController@getRelatedAuthors');
+
+Route::delete('/themes/{theme}', 'App\Http\Controllers\ThemeController@destroy');
