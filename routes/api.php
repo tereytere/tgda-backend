@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Admin Login
-Route::post('/login', 'App\Http\Controllers\LoginController@login');
-
-// Cookies
-Route::post('/set-cookie', 'App\Http\Controllers\CookieController@setCookie');
+// Users
+Route::post('/login', 'AuthController@login');
+Route::post('/logout', 'AuthController@logout');
+Route::post('/info', 'AuthController@infodata');
 
 // Search
 Route::get('/search', 'App\Http\Controllers\SearchController@search');
@@ -27,7 +26,7 @@ Route::get('/search', 'App\Http\Controllers\SearchController@search');
 Route::get('/posts', 'App\Http\Controllers\PostController@list');
 
 Route::get('/post', 'App\Http\Controllers\PostController@create');
-Route::post('/post', 'App\Http\Controllers\PostController@store');
+Route::middleware('auth')->post('/post', 'App\Http\Controllers\PostController@store');
 
 Route::put('/posts/{post}', 'App\Http\Controllers\PostController@update');
 Route::get('/posts/{post}', 'App\Http\Controllers\PostController@getRelatedData');

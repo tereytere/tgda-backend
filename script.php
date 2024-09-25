@@ -19,8 +19,8 @@ $result = $conn->query($sql);
 // Comprobar si existen bases de datos y mostrarlas
 if ($result->num_rows > 0) {
     echo "Bases de datos encontradas:<br>";
-    while($row = $result->fetch_assoc()) {
-        echo $row["Database"]. "<br>";
+    while ($row = $result->fetch_assoc()) {
+        echo $row["Database"] . "<br>";
     }
 } else {
     echo "No se encontraron bases de datos.";
@@ -28,4 +28,3 @@ if ($result->num_rows > 0) {
 
 // Cerrar conexión
 $conn->close();
-?>
