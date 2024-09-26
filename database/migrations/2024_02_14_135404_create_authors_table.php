@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('image', 1024)->nullable();
             $table->string('youtube')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('tiktok')->nullable();
             $table->string('podcast')->nullable();
             $table->string('webpage')->nullable();
             $table->string('language')->nullable();
