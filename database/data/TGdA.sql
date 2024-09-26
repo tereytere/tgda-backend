@@ -631,7 +631,7 @@ INSERT INTO `themes` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -642,7 +642,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+INSERT INTO `users` (`id`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'adminTGdA', '$2y$12$AIiLR9qZQNG/KvqAZskTcO3gcoWZuIyC6wjofR8OEGxVP8T.o9ZVK', NULL, '2024-05-21 10:12:25', '2024-05-21 10:12:25');
 
 --
@@ -725,7 +725,7 @@ ALTER TABLE `themes`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_username_unique` (`username`);
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
