@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ThemeController;
-use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +17,13 @@ use App\Http\Controllers\SearchController;
 */
 
 // Authentication Routes
-Route::post('/login', 'App\Http\Controllers\AuthController@login');
-Route::post('/logout', 'App\Http\Controllers\AuthController@logout');
+Route::post('/login', 'App\Http\Controllers\UserController@login');
+Route::post('/logout', 'App\Http\Controllers\UserController@logout');
 
 
 // Public Routes (No Authentication Required)
+Route::post('/users', 'App\Http\Controllers\UserController@create');
+Route::get('/users/{id}', 'App\Http\Controllers\UserController@show');
 Route::get('/posts', [PostController::class, 'list']);
 Route::get('/posts/{post}', [PostController::class, 'getRelatedData']);
 Route::get('/posts/{post}/authors', [PostController::class, 'getRelatedAuthors']);
@@ -55,6 +56,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/theme', [ThemeController::class, 'store']);
     Route::put('/themes/{theme}', [ThemeController::class, 'update']);
     Route::delete('/themes/{theme}', [ThemeController::class, 'destroy']);
+
+    // Users
+    Route::get('/users', 'App\Http\Controllers\UserController@list');
+    Route::put('/users/{id}', 'App\Http\Controllers\UserController@update');
+    Route::delete('/users/{id}', 'App\Http\Controllers\UserController@delete');
 });
 
 // Search
