@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use App\Models\Author;
 use App\Models\Theme;
+use Exception;
+
 
 class AuthorController extends Controller
 {
@@ -24,12 +27,7 @@ class AuthorController extends Controller
         return response()->json($authors);
     }
 
-    public function create(): JsonResponse
-    {
-        return response()->json(['message' => 'Create method accessed']);
-    }
-
-    public function store(Request $request): JsonResponse
+    public function create(Request $request): JsonResponse
     {
         try {
             $validatedData = $request->validate([
@@ -43,18 +41,42 @@ class AuthorController extends Controller
                 'webpage' => 'nullable|string',
                 'language' => 'required|string',
             ]);
+
+            // Log the validated data
+            Log::info('Author data: ', $validatedData);
+
+            // Create the author
+            $author = Author::create($validatedData);
+
+            // Attach themes to the author if provided
+            $this->attachThemesToAuthor($author, $validatedData['themes'] ?? []);
+
+            // Load themes for the response
+            $author->load('themes');
+
+            // Return success response
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Author created successfully',
+                'data' => $author,
+            ], Response::HTTP_CREATED);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            return response()->json(['message' => 'Validation error', 'errors' => $e->errors()], Response::HTTP_BAD_REQUEST);
+            // Handle validation errors
+            Log::error('Validation error creating author: ', $e->errors());
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Validation error',
+                'errors' => $e->errors(),
+            ], Response::HTTP_BAD_REQUEST);
+        } catch (Exception $e) {
+            // Log unexpected errors
+            Log::error('Error creating author: ' . $e->getMessage());
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Author creation failed',
+                'error' => $e->getMessage(),
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
-
-        $author = Author::create($validatedData);
-
-        // Check if themes are provided and attach existing themes to the author
-        $this->attachThemesToAuthor($author, $validatedData['themes'] ?? []);
-
-        $author->load('themes');
-
-        return response()->json(['message' => 'Author created successfully', 'author' => $author], Response::HTTP_CREATED);
     }
 
     public function update(Request $request, Author $author): JsonResponse

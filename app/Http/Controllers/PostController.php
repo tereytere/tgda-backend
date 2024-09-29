@@ -41,12 +41,7 @@ class PostController extends Controller
         }
     }
 
-    public function create(): JsonResponse
-    {
-        return response()->json(['message' => 'Create method accessed']);
-    }
-
-    public function store(Request $request): JsonResponse
+    public function create(Request $request): JsonResponse
     {
         try {
             $validatedData = $request->validate([
@@ -61,6 +56,9 @@ class PostController extends Controller
                 'language' => 'required|string'
             ]);
 
+            // Log the validated data
+            Log::info('Post data: ', $validatedData);
+
             // Find or create the author based on the provided name
             $author = Author::firstOrCreate(['name' => $validatedData['author']]);
 
@@ -71,7 +69,9 @@ class PostController extends Controller
             $post = new Post($validatedData);
             $post->author_id = $author->id;
 
-            $post->save();
+            if (!$post->save()) {
+                Log::error('Failed to save post');
+            }
 
             // Attach themes to the post
             $this->attachThemes($post, $validatedData['themes'] ?? []);
@@ -80,11 +80,20 @@ class PostController extends Controller
             $post->load('author', 'themes');
 
             // Return the response
-            return response()->json(['message' => 'Post created successfully', 'post' => $post], Response::HTTP_CREATED);
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Post created successfully',
+                'data' => $post,
+            ], Response::HTTP_CREATED);
         } catch (Exception $e) {
             Log::error('Error creating post: ' . $e->getMessage());
+            Log::error($e);
 
-            return response()->json(['error' => 'Failed to create post.'], Response::HTTP_INTERNAL_SERVER_ERROR);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Post creation failed',
+                'error' => $e->getMessage(),
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 

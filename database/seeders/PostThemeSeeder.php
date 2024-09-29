@@ -10,6 +10,11 @@ class PostThemeSeeder extends Seeder
     public function run()
     {
         $data = [
+
+            ["post_id" => "0885f5b7-6dd9-4c14-aa18-d6a368982f49", "theme_id" => "1b09baf6-2eb7-42d6-bf1b-e34da736692b", "created_at" => "2024-09-29 20:20:19", "updated_at" => "2024-09-29 20:20:19"],
+            ["post_id" => "0885f5b7-6dd9-4c14-aa18-d6a368982f49", "theme_id" => "54331009-2542-4923-8941-2433d51c835f", "created_at" => "2024-09-29 20:20:19", "updated_at" => "2024-09-29 20:20:19"],
+            ["post_id" => "0885f5b7-6dd9-4c14-aa18-d6a368982f49", "theme_id" => "71b0f422-36c5-4d3b-b4c2-0f5c1eabc2db", "created_at" => "2024-09-29 20:20:19", "updated_at" => "2024-09-29 20:20:19"],
+            ["post_id" => "0885f5b7-6dd9-4c14-aa18-d6a368982f49", "theme_id" => "7d0d3a4b-70b5-4443-b374-fe9884047866", "created_at" => "2024-09-29 20:20:19", "updated_at" => "2024-09-29 20:20:19"],
             ["post_id" => "37766245-9338-451e-87a8-bab140860070", "theme_id" => "1b09baf6-2eb7-42d6-bf1b-e34da736692b", "created_at" => "2024-04-09 12:25:29", "updated_at" => "2024-04-09 12:25:29"],
             ["post_id" => "37766245-9338-451e-87a8-bab140860070", "theme_id" => "71b0f422-36c5-4d3b-b4c2-0f5c1eabc2db", "created_at" => "2024-04-09 12:25:29", "updated_at" => "2024-04-09 12:25:29"],
             ["post_id" => "37766245-9338-451e-87a8-bab140860070", "theme_id" => "ef4af49b-8f56-425c-832b-790bf026467a", "created_at" => "2024-04-09 12:25:29", "updated_at" => "2024-04-09 12:25:29"],
